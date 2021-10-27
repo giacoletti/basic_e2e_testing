@@ -9,5 +9,24 @@
 <body>
     <h1>Hello World!</h1>
     <h3>My first test going green</h3>
+    <input type="text" name="firstName">
+    <input type="text" name="email">
+    <input type="password" name="password">
+    <input type="submit" value="Register" id="submit-button">
+    <div id="confirmation-message"></div>
+
+    <script>
+        const emailInput = document.querySelector('input[name=email]');
+        const button = document.getElementById('submit-button');
+        const messageElement = document.getElementById('confirmation-message');
+        button.addEventListener('click', () => {
+            if (emailInput.value === ''){
+                messageElement.innerText = 'Hey! You need to give us your email address!';
+            } else {
+                //we would make a network call to the system that creates accounts...
+                messageElement.innerText = 'Thank you for signing up!';
+            }
+        });
+    </script>
 </body>
 </html>
